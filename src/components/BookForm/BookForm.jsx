@@ -17,7 +17,8 @@ function BookForm() {
     };
     dispatch(action);
     // TODO - axios request to server to add book
-
+    setTitle('');
+    setAuthor('');
   };
 
   return (

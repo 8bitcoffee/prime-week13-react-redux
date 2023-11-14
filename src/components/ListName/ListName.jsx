@@ -11,6 +11,7 @@ function ListName () {
         console.log('New name: ', newListName);
         const action = {type: "SET_LIST_NAME", payload: newListName};
         dispatch(action);
+        setNewListName("");
     }
 
     return(
