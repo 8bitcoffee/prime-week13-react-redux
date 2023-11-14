@@ -1,14 +1,21 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 function BookForm() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
+  const dispatch = useDispatch();
+
   const handleSubmit = event => {
     event.preventDefault();
 
     console.log(`Adding book`, {title, author});
-
+    let action = {
+      type: "ADD_BOOK",
+      payload: {title, author}
+    };
+    dispatch(action);
     // TODO - axios request to server to add book
 
   };
